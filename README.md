@@ -3,3 +3,4 @@
 Proof of concept of auto-sync.
 
 - iteration 1, .github/workflows not touched.
+- iteration 2, .github/workflows not touched.
