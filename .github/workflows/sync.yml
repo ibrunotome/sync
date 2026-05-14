@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   sync:
-    if: github.repository != 'kuestcom/prediction-market'
+    if: github.repository != 'kuestcom/sync'
     runs-on: ubuntu-24.04
     timeout-minutes: 10
 
@@ -33,7 +33,7 @@ jobs:
       - name: Sync with upstream
         shell: bash
         run: |
-          git remote get-url upstream || git remote add upstream https://github.com/kuestcom/prediction-market.git
+          git remote get-url upstream || git remote add upstream https://github.com/kuestcom/sync.git
           git fetch upstream main
           UPSTREAM_HASH=$(git rev-parse upstream/main)
           if git diff --quiet HEAD upstream/main -- . ':(exclude).github/workflows/**'; then
